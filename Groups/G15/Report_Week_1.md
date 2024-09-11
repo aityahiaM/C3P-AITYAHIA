@@ -193,5 +193,125 @@ Exemple :
 [:x | x + 1] value: 5.
 ```
 
+## Nom : Coundoul
+## Prénom : Adama
+
+## Learn about collections in Pharo and their iterators
+
+### What is a collection and what is it used for?
+
+Une collection est une structure de données qui permet de stocker et manipuler un groupe d'objets .
+
+### What kind of collections does Pharo standard library provide?
+
+ Pharo propose plusieurs collections telles que :
+- OrderedCollection (dynamically growing)
+- Array (fixed size, direct access)
+- Set (no duplicates)
+- Dictionary (key-based, aka. maps)
+
+### How do you iterate collections and what are differences between them?
+
+-do: (iterate)
+-collect: (iterate and collect results)
+-select: (select matching elements)
+-reject: (reject matching elements)
+-detect: (get first element matching)
+-detect:ifNone: (get first element matching or a default value)
+-includes: (test inclusion)
+-and a lot more...
+
+ ### How did you find this information?
+ 
+ http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week3/C019-W3S07-Basic-ArraySetOrderedCollection.pdf
+ http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week3/C019-W3S09-Iterators.pdf
+
+### Examples 
+ #(16 11 68 19) do: [ :each | Transcript show: each ; cr ]
+ #(16 11 68 19) select: [ :i | i odd ]
+ > #(11 19)
+ #(16 11 68 19) reject: [ :i | i odd ]
+ > #(16 68)
+
+ ## Learn about conditionals in Pharo
+
+ ### How do you write conditionals in Pharo?
+
+In Pharo, traditional conditional (if, else, while) are messages sent to boolean or block object.
+Ex : Weather isRaining
+     ifTrue: [ self takeMyUmbrella ]
+     ifFalse: [ self takeMySunglasses ]
+
+### What is different from other programming languages?
+
+The difference is Conceptually ifTrue:ifFalse: is a message sent to an object:a boolean!
+
+### an you think about the benefits and drawbacks of the approach?
+
+Heavily optimised by the compiler
+
+### How did you find this information?
+
+http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week2/C019-W2S08-BooleansAndCondition.pdf
+
+## Learn how to create classes and methods
+
+### How do you write a small program with classes and methods in Pharo?
+
+A class is defined by sending a message to its superclass
+Classes are defined inside packages
+Methods are public
+By default a method returns the receiver, self
+Class methods are just methods of the class side
+
+### How did you find this information?
+
+http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week1/C019-W1S06-ClassAndMethodDefinition.pdf
+
+### What program did you write?
+
+I create a counter, increment, decrement ,initialize it ,write testCases and define a new instance creation method.
+
+### What problems did you find?
+
+I find problems to push my project with https.I create a ssh key to resolve the problems and add this to github and pharo.
+
+### Please provide a github repository link.
+
+https://github.com/adama-coundoul/MyCounter
+
+## Learn about the basic Pharo coding style.
+
+### What rules are common to follow?
+
+-  Shared variables start with uppercase
+-  Private variables start with lowercase
+-  Avoid to use plural for class names
+-  Favor simple direct meaning
+-  Use descriptive names
+-  ...
+
+ ### Examples that violate some rulesPlease show code .
+
+ Not dow prefer dayOfWeek
+ | dataset f Xmatrix scale X |
+
+## Can you learn about cascades and block closures? How do you approach it?
+
+ Blocks are:
+kind of anonymous methods
+◦ also called (lexical) closures
+used everywhere in Pharo
+◦ loops, conditionals, iterators, ...
+◦ GUI frameworks, DSLs, ...
+◦ at the heart of the system
+
+A block is defined by [ ]
+[ expressions. ... ]
+
+### How did you find this information?
+
+http://rmod-pharo-mooc.lille.inria.fr/MOOC/PharoMOOC/Week2/C019-W2S06-Blocks.pdf
+
 
 
