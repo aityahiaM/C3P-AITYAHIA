@@ -97,7 +97,7 @@ J'ai trouvé ces informations dans le mooc.
 - Créer une classe 
 ```bash
 Exemple : 
-Object << #MCounter
+Object << #MyCounter
 	slots: {#count};
 	sharedVariables: {};
 	package: 'MyCounter'
